@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.title {
+    color: blue;
+    margin-bottom: 25px;
+}
+
+.div-one,.div-two ,.div-three ,.div-four ,.div-five ,.div-six  {
+    height: 200px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+    margin-right: 20px;
+    box-shadow: 10px 10px 8px #888888;
+
+}
