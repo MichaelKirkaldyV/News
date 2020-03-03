@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpService } from './http.service';
 
 @Component({
@@ -8,18 +8,17 @@ import { HttpService } from './http.service';
 })
 export class AppComponent {
  
-    sites: Object;
+    sites: any;
 
-  constructor(private _http: HttpService) {}
-
-  ngOnInIt() {
-    this.getHeadlines()
+  constructor(private _http: HttpService) {
+    console.log('app component constructor called'); 
+    this.retrieveHeadlines();
   }
-  getHeadlines() {
+
+  retrieveHeadlines() {
     this._http.getTopHeadlines().subscribe(data => {
       this.sites = data;
-      console.log(this.sites)
-    });
+      console.log("Here are the sites requested", this.sites);
+    })
   }
- 
-}
+}// End of exports
