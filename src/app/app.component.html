@@ -10,9 +10,18 @@
     <h1 class="title">Newsy</h1>
     <div class="top-row">
       <div class="div-one">
-        <div class="box-header"></div>
-        <div class="box-img"></div>
-        <div class="box-opt"></div>
+        <div class="box-header"><h1>News Headline</h1></div>
+        <div class="box-title">
+          <h1 class="desc">{{sites.articles[0].title}}</h1>
+          <p>{{sites.articles[0].source.name}}</p>
+        </div>
+        <!--<div class="box-img"><img src="{{sites.articles[0].urlToImage}}" alt="headline-img" class="head-img"></div>!-->
+        <div class="desc-two">{{sites.articles[0].description}}</div>
+        <div class="box-opt">
+          <a href="" class="options">Likes</a>
+          <a href="" class="options">Comments</a>
+          <a href="" class="options">Share</a>
+        </div>
       </div>
       <div class="div-two"></div>
       <div class="div-three"></div>
@@ -23,7 +32,10 @@
       <div class="div-six"></div>
     </div>
   </div>
-  
-  
+  <div class="news">
+    <ul>
+      <li>{{outlets.sources}}</li>
+    </ul>
+  </div>
 </body>
 </html>
