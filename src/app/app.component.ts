@@ -9,7 +9,8 @@ import { HttpService } from './http.service';
 export class AppComponent {
  
     sites: any;
-    outlets: any;
+    outlets: string[] = [];
+    news: any;
 
   constructor(private _http: HttpService) {
     console.log('app component constructor called'); 
@@ -26,8 +27,12 @@ export class AppComponent {
 
   retrieveSources() {
     this._http.getSources().subscribe(data => {
-      this.outlets = data;
-      console.log("Sources:", this.outlets)
+      this.news = data;
+      console.log("SOURCES", this.news)
+      for(let source of this.news.sources) {
+        this.outlets.push(source.name);
+      }
+      console.log("OUTLETS", this.outlets)
     })
   }
 }// End of exports
